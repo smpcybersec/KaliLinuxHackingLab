@@ -104,11 +104,6 @@ Click "Continue"</sub>
 Click "Continue"</sub>
 <br />
 <br />
-<img src="" width="50%" height="50%">
-<br />
-<sub></sub>
-<br />
-<br />
 <img src="https://i.imgur.com/Hn0Npo4.png" width="50%" height="50%">
 <br />
 <sub>Select "Guided - use entire disk" to partition entire allocated disk space to operating system
