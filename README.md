@@ -191,19 +191,409 @@ Select "Continue" to reboot the machine</sub>
 <b>[Kali Linux Initial Setup]</b>
 <br />
 <br />
-<img src="" width="50%" height="50%">
+<img src="https://i.imgur.com/edlcOqv.png" width="50%" height="50%">
 <br />
-<sub></sub>
+<sub>Upon logging in, open Terminal Emulator on toolbar at top of screen
+<br />
+**Alternatively, pressing Ctrl-Alt-T opens Terminal Emulator
+<br />
+Enter command:</sub>
+  
+  ```
+  sudo apt update && sudo apt upgrade -y
+  ```
+</p>
+
+<p align="center">
+<sub>**This updates and upgrades all installed packages using sudo privileges and auto-confirms upgrades</sub>
 <br />
 <br />
-<img src="" width="50%" height="50%">
+<img src="https://i.imgur.com/MLciwJ7.png" width="50%" height="50%">
 <br />
-<sub></sub>
+<sub>After entering sudo (root) password, wait for updates and upgrades to finish.</sub>
 <br />
 <br />
-<img src="" width="50%" height="50%">
+<img src="https://i.imgur.com/ytPCZet.png" width="50%" height="50%">
 <br />
-<sub></sub>
+<sub>Enter command:</sub>
+
+  ```
+  sudo apt autoremove -y
+  ```
+
+</p>
+  
+<p align="center">
+<sub>**This removes packages deemed no longer necessary for dependencies
+<br />
+Enter sudo password</sub>
+<br />
+<br />
+<img src="https://i.imgur.com/7JSFQJZ.png" width="50%" height="50%">
+<br />
+<sub>Wait for autoremove to finish
+<br />
+Take snapshot of current machine state</sub>
+<br />
+<br />
+<b>[Taking A Snapshot of A Virtual Machine]</b>
+<br />
+<br />
+<img src="https://i.imgur.com/pDTh37R.png" width="50%" height="50%">
+<br />
+<sub>Click "Machine" on toolbar at top left of virtual machine window
+<br />
+Select "Take Snapshot..."</sub>
+<br />
+<br />
+<img src="https://i.imgur.com/m8GDiAr.png" width="50%" height="50%">
+<br />
+<sub>Name and describe snapshot
+<br />
+**I name mine by date and time taken and describe the snapshot as what changes to the machine I have made.</sub>
+<br />
+<br />
+<b>[Tools of the Trade]</b>
+<br />
+<br />
+<img src="https://i.imgur.com/qh2ubOf.png" width="50%" height="50%">
+<br />
+<sub>Ensuring nmap is installed using:</sub>
+</p>
+
+  ```
+  nmap --version
+  ```
+
+<p align="center">
+<sub>nmap is used to scan and enumerate networks.  It can be configured to run scans at various speeds and with different obfuscation methods to avoid detection.
+<br />
+It is a powerful tool for both Red Team and Blue Team.</sub>
+<br />
+<br />
+<img src="https://i.imgur.com/uTLtU5Z.png" width="50%" height="50%">
+<br />
+<sub>Ensuring Metasploit framework is installed using:</sub>
+</p>
+
+  ```
+  msfconsole --version
+  ```
+
+<p align="center">
+<sub>The Metasploit framework is a tool used by ethical hackers and malicious actors to probe systems for vulnerabilities and exploits them.
+<br />
+Being an open-source framework, it can be customized and appended.</sub>
+<br />
+<br />
+<img src="https://i.imgur.com/FNse4hF.png" width="50%" height="50%">
+<br />
+<sub>Ensuring Python3 is installed using:</sub>
+</p>
+
+  ```
+  python3 --version
+  ```
+
+<p align="center">
+<sub>Python is a programming language popular with hackers because of its simplicity in its syntax.
+<br />
+Python is also open-source, cross-platform, extendable with low-level modules, and has a broad standard library.</sub>
+<br />
+<br />
+<img src="https://i.imgur.com/LqGLNEC.png" width="50%" height="50%">
+<br />
+<sub>Ensuring Git is installed using:</sub>
+</p>
+
+  ```
+  git --version
+  ```
+
+<p align="center">
+<sub>Git is used for version control in tracking updates to a file, or checking integrity of a file.</sub>
+<br />
+<br />
+<img src="https://i.imgur.com/B5fKrwV.png" width="50%" height="50%">
+<br />
+<sub>By default, Kali Linux will not have VSCode, or code-oss, installed.
+<br />
+Install VSCode/code-oss using:</sub>
+</p>
+
+  ```
+  sudo apt install code-oss
+  ```
+
+<p align="center">
+<b>[Changing Root Account Password]</b>
+<br />
+<br />
+<img src="https://i.imgur.com/l7YHa6l.png" width="50%" height="50%">
+<br />
+<sub>It is bad practice to use default credentials.  Changing the root password is imperative.
+<br />
+Enter the command:</sub>
+</p>
+
+  ```
+  sudo su
+  ```
+
+<p align="center">
+<sub>**You may have to enter your sudo password
+<br />
+From the root account, change the root account password</sub>
+<br />
+<br />
+<img src="https://i.imgur.com/r4qqKYg.png" width="50%" height="50%">
+<br />
+<sub>Enter the command:</sub>
+</p>
+
+  ```
+  passwd
+  ```
+
+<p align="center">
+<sub>Enter and re-enter secure password</sub>
+<br />
+<br />
+<b>[Creating a Low-Level User]</b>
+<br />
+<br />
+<img src="https://i.imgur.com/T2H89tI.png" width="50%" height="50%">
+<br />
+<sub>Creating a low-level user to use as a main account is best practice.
+<br />
+With future updates on user permissions, this ensures only trusted accounts have sudo (root) priveleges.
+<br />
+From the root account, enter the command:</sub>
+</p>
+
+  ```
+  adduser <username>
+  ```
+
+<p align="center">
+<sub>A new user account is added to your kernel's user directories</sub>
+<br />
+<br />
+<img src="https://i.imgur.com/jI838fP.png" width="50%" height="50%">
+<br />
+<sub>Enter new account's password.</sub>
+<br />
+<br />
+<img src="https://i.imgur.com/b7M1RZM.png" width="50%" height="50%">
+<br />
+<sub>Continue pressing Enter until prompted "Is this information correct?"
+<br />
+Enter "Y"
+<br />
+Press Enter</sub>
+<br />
+<br />
+<b>[Adding sudoer Privileges to User Accounts]</b>
+<br />
+<br />
+<img src="https://i.imgur.com/OdIgTRb.png" width="50%" height="50%">
+<br />
+<sub>From the root account, enter the command:</sub>
+</p>
+
+  ```
+  usermod -aG sudo <username>
+  ```
+
+<p align="center">
+<sub>**The argument "-aG" is appending (a) to the sudo group (G)</sub>
+<br />
+<br />
+<img src="https://i.imgur.com/iBJzJVs.png" width="50%" height="50%">
+<br />
+<sub>Change the user's login shell to bash using the command:</sub>
+</p>
+
+  ```
+  chsh -s /bin/bash <username>
+  ```
+
+<p align="center">
+<sub>This change's the new user's default shell to bash, the shell currently in use for terminal commands.</sub>
+<br />
+<br />
+<img src="https://i.imgur.com/3eFX1Ks.png" width="50%" height="50%">
+<br />
+<sub>Switch to new low-level user using the command:</sub>
+</p>
+
+  ```
+  su <username>
+  ```
+
+<p align="center">
+<br />
+<br />
+<b>[Installing A Multiplexer]</b>
+<br />
+<br />
+<img src="https://i.imgur.com/e0Z9Che.png" width="50%" height="50%">
+<br />
+<sub>From new user account, enter command:</sub>
+</p>
+
+  ```
+  sudo apt install konsole -y
+  ```
+
+<p align="center">
+<sub>Enter sudo password.
+<br />
+**Konsole is a multiplexer used to operate from multiple terminals simultaneously.
+<br />
+**Tilix can also be used as well as Guake.</sub>
+<br />
+<br />
+<img src="https://i.imgur.com/ylVt7Yk.png" width="50%" height="50%">
+<br />
+<sub>Open Konsole by typing the following command:</sub>
+</p>
+
+  ```
+  sudo konsole
+  ```
+
+<p align="center">
+<br />
+<br />
+<img src="https://i.imgur.com/ylVt7Yk.png" width="50%" height="50%">
+<br />
+<sub>Split the terminal either horizontally or vertically by selecting from the "Split View" dropdown menu at the top of the Konsole toolbar.</sub>
+<br />
+<br />
+<b>[Installing and Setting Up A VPN]</b>
+<br />
+<br />
+<img src="https://i.imgur.com/MkFmTAM.png" width="50%" height="50%">
+<br />
+<sub>Using NordVPN, per NordVPN's website on installing and configuring on Linux:
+<br />
+To download via command line, enter the following command:</sub>
+</p>
+
+  ```
+  sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh
+  ```
+
+<p align="center">
+<sub>Enter sudo password to continue download.
+<br />
+**This command downloads and installs the NordVPN client for Linux</sub>
+<br />
+<br />
+<img src="https://i.imgur.com/t4DBIUd.png" width="50%" height="50%">
+<br />
+<sub>Wait for prompt to continue with installation.
+<br />
+Press "Y"
+<br />
+Press Enter</sub>
+<br />
+<br />
+<img src="https://i.imgur.com/NylRq50.png" width="50%" height="50%">
+<br />
+<sub>One more step to make sure NordVPN can be used by this user is to enter the following command:</sub>
+</p>
+
+  ``` 
+  sudo usermod -aG nordvpn $USER
+  ```
+
+<p align="center">
+<sub>This will allow the current $USER to use NordVPN client via command line interface</sub>
+<br />
+<br />
+<img src="https://i.imgur.com/AE6DXeQ.png" width="50%" height="50%">
+<br />
+<sub>Reboot machine to apply adding current $USER to nordvpn group using:</sub>
+</p>
+
+  ```
+  sudo reboot
+  ```
+
+<p align="center">
+<br />
+<br />
+<img src="https://i.imgur.com/Ee9syHk.png" width="50%" height="50%">
+<br />
+<sub>Upon reboot, open terminal emulator and enter the following command:</sub>
+</p>
+
+  ```
+  nordvpn set technology openvpn
+  ```
+
+<p align="center">
+<sub>OpenVPN is a stable, secure, and open-source VPN protocol that supports both TCP and UDP protocols.
+<br />
+NordLynx is also an option, but I have grown to rely on OpenVPN's stability.  NordLynx may be faster for others.</sub>
+<br />
+<br />
+<img src="https://i.imgur.com/s1GjESN.png" width="50%" height="50%">
+<br />
+<sub>Another technology I enable from the start is Threat Protection Lite.  To do this, enter the command:</sub>
+</p>
+
+  ```
+  nordvpn set threatprotectionlite on
+  ```
+
+<p align="center">
+<sub>Threat Protection Lite is a feature that blocks ads, trackers, and malicious URLs while getting rid of downloaded malware.</sub>
+<br />
+<br />
+<b>[Logging Into NordVPN]</b>
+<br />
+<br />
+<img src="https://i.imgur.com/XPi2fZK.png" width="50%" height="50%">
+<br />
+<sub>To log into NordVPN via command line, enter the command:</sub>
+</p>
+
+  ```
+  nordvpn login
+  ```
+
+<p align="center">
+<sub>This will prompt an external link to visit in order to be able to sign into the client via command line.</sub>
+<br />
+<br />
+<img src="https://i.imgur.com/2URoi8F.png" width="50%" height="50%">
+<br />
+<sub>Right-click link in terminal emulator
+<br />
+Click "Open Link"
+<br />
+This will open a browser tab, taking you to NordVPN's login page on their website</sub>
+<br />
+<br />
+<img src="https://i.imgur.com/tjDTHzS.png" width="50%" height="50%">
+<br />
+<sub>Log in using credentials</sub>
+<br />
+<br />
+<img src="https://i.imgur.com/WX1KfsV.png" width="50%" height="50%">
+<br />
+<sub>After verifying being logged in, connect to VPN using the command:</sub>
+</p>
+
+  ```
+  nordvpn connect
+  ```
+
+<p align="center">
+<sub>The Kali Linux machine is now set up and ready to begin carrying out network scans and attacks.</sub>
 <br />
 <br />
 </p>
